@@ -7,6 +7,7 @@
     --neutral-600: hsl(33, 17%, 41%);
     --neutral-400: hsl(36, 22%, 86%);
     --neutral-50: hsl(40, 60%, 98%);
+    --terracotta-400: hsl(22, 72%, 56%);
     --terracotta-500: hsl(18, 62%, 47%);
     --terracotta-700: hsl(15, 69%, 37%);
     --neutral-200: hsl(30, 24%, 93%);
@@ -117,6 +118,7 @@ h1, h2, h3, h4{
     border-radius: 20px;
     padding: 5px;
     border: none;
+    cursor: pointer;
 }
 
 .print{
@@ -125,6 +127,7 @@ h1, h2, h3, h4{
     border-radius: 20px;
     padding: 2px;
     border: 1px solid var(--neutral-900);
+    cursor: pointer;
 }
 
 .copy{
@@ -167,6 +170,7 @@ nav li{
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
 
 nav span{
@@ -444,16 +448,21 @@ p, h1, h2, h3, h4 {
     position: static;
     height: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 20px;
   }
-
-  .receipt-card,
   .host-card {
     position: static;
     width: 100%;
     height: auto;
-    transform: none;
+    transform: rotate(2deg);
+    box-shadow: 3px 3px 5px var(--terracotta-400);
+  }
+  .receipt-card{
+    position: static;
+    width: 100%;
+    height: auto;
+    transform: rotate(-2deg);
   }
 
   .extra {
@@ -470,5 +479,17 @@ p, h1, h2, h3, h4 {
     flex-direction: column;
     width: 100%;
     margin: 0;
+  }
+
+  .bottom, nav ul{
+    display: none;
+  }
+
+  .buttons{
+    justify-content: space-between;
+  }
+
+  .print, .cal, .copy{
+    cursor: pointer;
   }
 }
